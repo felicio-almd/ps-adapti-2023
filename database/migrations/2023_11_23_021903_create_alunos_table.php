@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('alunos', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('description')->nullable();
-            $table->string('image');
+            $table->string('nome');
+            $table->text('descricao')->nullable();
+            $table->string('imagem');
             $table->foreignId('cursos_id')->constrained('cursos')->onDelete('cascade');
-            $table->$table->timestamps();
+            $table->timestamps();
         });
     }
 

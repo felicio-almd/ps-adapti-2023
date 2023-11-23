@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CursoRequest;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreCursoRequest;
+use App\Http\Requests\CursoUpdateRequest;
 
-use App\Models\Categoria;
 use App\Models\Curso;
 
 class CursoController extends Controller
@@ -54,7 +53,7 @@ class CursoController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function store(CursoRequest $request)
+    public function store(StoreCursoRequest $request)
     {
         $data = $request->all();
         $this->cursos->create($data);
@@ -85,7 +84,7 @@ class CursoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CursoRequest $request, $id)
+    public function update(CursoUpdateRequest $request, $id)
     {
         $data = $request->all();
         $curso = $this->cursos->find($id);
