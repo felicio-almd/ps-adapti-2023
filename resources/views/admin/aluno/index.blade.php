@@ -115,8 +115,8 @@
                         </div>
 
                         <div class="form-group col-md-12 col-sm-12">
-                            <h5 class="modal-title col-12 text-dark" id="serviceModalLabel">Está contratado?</h5>
-                            <input type="text" id="detalhes-contratado" name="detalhes-contratado" class="form-control" readonly>
+                            <h5 class="modal-title col-12 text-dark" id="serviceModalLabel">Está formado?</h5>
+                            <input type="text" id="detalhes-formado" name="detalhes-formado" class="form-control" readonly>
                         </div>
 
                         <div class="form-group col-md-12 col-sm-12">
@@ -148,7 +148,8 @@
         $.getJSON(url, (resposta) => {
             console.log(resposta);
             $("#detalhes-nome").val(resposta.nome);
-            $("#detalhes-contratado").val(resposta.contratado);
+            const valorFormado = resposta.formado === 1 ? "Sim" : 'Nao';
+            $("#detalhes-formado").val(valorFormado);
             $("#detalhes-descricao").val(resposta.descricao);
             $("#detalhes-curso").val(resposta.curso.curso);
             $("#detalhes-imagem").attr('src', '' + resposta.imagem);

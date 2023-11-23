@@ -29,10 +29,13 @@
 {{-- Está contratado? ou Esta formado? --}}
 
 <div class="row">
-    <label class="col-sm-2 col-form-label">{{ __('Está contratado?') }}</label>
+    <label for="formado" class="col-sm-2 col-form-label">{{ __('Está formado?') }}</label>
     <div>
-        <input type="checkbox" id="estáFormado" name="contratado" value="1" data-expected-info="contratado" class="form-control @error('contratado') is-invalid @enderror">
-        @error('contratado')
+        <input type="radio" id="formado-yes" name="formado" value="1" data-expected-info="formado" {{ isset($aluno) && $aluno->formado == 1 ? 'checked' : '' }} class="form-control @error('formado') is-invalid @enderror">
+        <label for="formado-yes">Sim</label>
+        <input type="radio" id="formado-no" name="formado" value="0" data-expected-info="formado" {{ isset($aluno) && $aluno->formado == 0 ? 'checked' : '' }} class="form-control @error('formado') is-invalid @enderror">
+        <label for="formado-no">Nao</label>
+        @error('formado')
         <span class="invalid-feedback" role="alert">
             <i class="fi-circle-cross"></i><strong> {{ $message }}</strong>
         </span>
