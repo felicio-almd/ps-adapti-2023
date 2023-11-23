@@ -4,8 +4,7 @@
         <div class="navbar-wrapper">
             <a class="navbar-brand" href="#">{{ $titlePage }}</a>
         </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
-            aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
             <span class="navbar-toggler-icon icon-bar"></span>
             <span class="navbar-toggler-icon icon-bar"></span>
@@ -30,9 +29,13 @@
                         </p>
                     </a>
                 </li>
+                <li>
+                    <a class="nav-link" href="{{ route('site') }}">
+                        {{ __('Voltar ao site') }}
+                    </a>
+                </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="material-icons">notifications</i>
                         <span class="notification">5</span>
                         <p class="d-lg-none d-md-block">
@@ -48,8 +51,7 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="material-icons">person</i>
                         <p class="d-lg-none d-md-block">
                             {{ __('Account') }}
@@ -63,15 +65,16 @@
                             @method('PUT')
                             <select name="locale" id="locale" class="dropdown-item">
                                 <option value="pt-BR" @if (Auth::user()->locale == 'pt-BR') selected @endif>
-                                    {{ __('Portuguese') }}</option>
+                                    {{ __('Portuguese') }}
+                                </option>
                                 <option value="en" @if (Auth::user()->locale == 'en') selected @endif>
-                                    {{ __('English') }}</option>
+                                    {{ __('English') }}
+                                </option>
                             </select>
                         </form>
                         <div class="dropdown-divider">
                         </div>
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Log out') }}</a>
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Log out') }}</a>
                     </div>
                 </li>
             </ul>
