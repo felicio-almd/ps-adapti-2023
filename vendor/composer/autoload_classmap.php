@@ -48,6 +48,7 @@ return array(
     'App\\Http\\Requests\\UserUpdateRequest' => $baseDir . '/app/Http/Requests/UserUpdateRequest.php',
     'App\\Models\\Categoria' => $baseDir . '/app/Models/Categoria.php',
     'App\\Models\\Log' => $baseDir . '/app/Models/Log.php',
+    'App\\Models\\Pokemon' => $baseDir . '/app/Models/Pokemon.php',
     'App\\Models\\Produto' => $baseDir . '/app/Models/Produto.php',
     'App\\Models\\Type' => $baseDir . '/app/Models/Type.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',

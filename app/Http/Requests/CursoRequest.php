@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TypeRequest extends FormRequest
+class CursoRequest extends FormRequest
 {
   /**
    * Determine if the user is authorized to make this request.
@@ -24,15 +24,15 @@ class TypeRequest extends FormRequest
   public function rules()
   {
     return [
-      "type" => ["required", "string"],
+      "curso" => ["required", "string"],
       "" => ["max", "string"],
     ];
   }
   public function messages()
   {
     return [
-      "type.required" => "O Campo precisa ser informado",
-      "type.max" => "O Campo deve ter no maximo 100 caracteres",
+      "curso.required" => "O campo precisa ser informado",
+      "curso.max" => "O campo deve ter no maximo 50 caracteres",
     ];
   }
 }

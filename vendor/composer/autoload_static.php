@@ -582,6 +582,7 @@ class ComposerStaticInitb16f3c0ad1f476460a610377ee725918
         'App\\Http\\Requests\\UserUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UserUpdateRequest.php',
         'App\\Models\\Categoria' => __DIR__ . '/../..' . '/app/Models/Categoria.php',
         'App\\Models\\Log' => __DIR__ . '/../..' . '/app/Models/Log.php',
+        'App\\Models\\Pokemon' => __DIR__ . '/../..' . '/app/Models/Pokemon.php',
         'App\\Models\\Produto' => __DIR__ . '/../..' . '/app/Models/Produto.php',
         'App\\Models\\Type' => __DIR__ . '/../..' . '/app/Models/Type.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',

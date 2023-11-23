@@ -5,16 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Type extends Model
+class Curso extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'type'
+        "curso",
     ];
-
-    public function pokemons()
-    {
-        return $this->hasMany(related: Pokemon::class);
-    }
 }

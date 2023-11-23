@@ -43,8 +43,6 @@ Route::middleware('locale')->group(function () {
         Route::resource('user', UserController::class, ['except' => ['show']]);
         Route::resource('curso', CursoController::class, ['except' => ['show']]);
         Route::resource('aluno', AlunoController::class);
-        Route::resource('type', TypeController::class);
-
 
         //Rotas para perfil do usuário
         Route::controller(ProfileController::class)->name('profile.')->group(function () {
@@ -55,5 +53,4 @@ Route::middleware('locale')->group(function () {
     });
 
     Route::get('/', [SiteController::class, 'index'])->name('site');
-
 });
