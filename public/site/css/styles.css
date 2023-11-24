@@ -3,22 +3,22 @@
 :root {
     --text: #000000;
     --background: #e2ebf5;
-    --background-container: rgba(0, 0, 0, 0.05);
+    --background-container: #bee8f3;
     --primary: #689ed4;
-    --secondary: #d9f5fc;
+    --secondary: #bee8f3;
     --accent: #4487ca;
 
     /* dark mode*/
     --text-dark: #ffffff;
     --background-dark: #08121c;
-    --background-container-dark: rgba(255, 255, 255, 0.05);
+    --background-container-dark: #07232b;
     --primary-dark: #2b6197;
     --secondary-dark: #031f26;
     --accent-dark: #3578bb;
 
     --box-shadow-a: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     --header-desktop-height: 80px;
-    --header-mobile-height: 64px;
+    --header-mobile-height: 100px;
 }
 
 * {
@@ -46,6 +46,36 @@ body {
     height: var(--header-desktop-height);
     box-shadow: var(--box-shadow-a);
     background: var(--background-container);
+    z-index: 10;
+}
+
+.search-bar {
+    display: flex;
+    border: 1px solid var(--background-dark);
+    height: 30px;
+    border-radius: 0.8rem;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 1rem;
+}
+
+.search-input {
+    height: 100%;
+    width: 15rem;
+    background: none;
+    font-family: Poppins, sans-serif;
+    border: none;
+    outline: none;
+    color: var(--text);
+}
+
+.search-button {
+    background: none;
+    border: none;
+}
+.search-button:hover {
+    cursor: pointer;
 }
 
 .actions {
@@ -76,32 +106,66 @@ input[type="checkbox"] {
 .login {
     color: var(--text);
 }
-
-.login:hover {
+.main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container {
     height: calc(100% - var(--header-desktop-height));
     margin-top: var(--header-desktop-height);
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    max-width: calc(18rem * 3 + 64px);
+    padding: 1rem;
 }
 
 .card {
     box-shadow: 5px 5px 15px -1px rgba(0, 0, 0, 0.41);
     max-width: 100%;
+    height: 27rem;
     width: 18rem;
     background: var(--secondary);
     border-radius: 1rem;
     overflow: hidden;
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.card-infos {
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+    flex-grow: 1;
+}
+
+.card-description {
+    font-size: 14px;
+}
+
+.card-occupation {
+    font-size: 14px;
+}
+
+.card-graduation {
+    font-size: 14px;
 }
 
 .card-img-top {
     width: 100%;
-    aspect-ratio: 5/4;
+    aspect-ratio: 6/4;
     object-fit: cover;
 }
 
@@ -119,7 +183,7 @@ input[type="checkbox"] {
     border-radius: 8px;
     color: var(--text);
     background: var(--accent);
-
+    width: 100%;
     cursor: pointer;
     transition: transform 200ms ease-in-out;
 }
@@ -130,7 +194,8 @@ input[type="checkbox"] {
     transform: scale(1.05);
 }
 .botao.contratado {
-    background-color: red;
+    background-color: var(--background-dark);
+    color: var(--text-dark);
 }
 
 .footer {
@@ -140,11 +205,15 @@ input[type="checkbox"] {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .dark {
     background: var(--background-dark);
+    color: var(--text-dark);
+}
+
+.dark .search-input {
     color: var(--text-dark);
 }
 
@@ -166,4 +235,23 @@ input[type="checkbox"] {
 
 .dark .iconify {
     color: var(--text-dark);
+}
+
+@media (max-width: 625px) {
+    .header {
+        display: flex;
+        flex-direction: column;
+        height: var(--header-mobile-height);
+        padding: 1rem 0;
+    }
+    .logo-img {
+        display: none;
+    }
+    .search-bar {
+        order: 3;
+    }
+    .container {
+        height: calc(100% - var(--header-mobile-height));
+        margin-top: var(--header-mobile-height);
+    }
 }

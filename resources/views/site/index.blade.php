@@ -21,7 +21,13 @@
       <img class="logo-img" src="./public/assets/seek_job.png" alt="Logo da Seek Job" width="75" />
     </div>
 
-    <div class="search" role="search"></div>
+    <form class="search-bar" action="" method="post">
+      @csrf
+
+      <input class="search-input" id="search" type="text" name="search" placeholder="Filtrar por nome e curso">
+
+      <button class="search-button" type="submit"><i class="search iconify" data-icon="material-symbols:search" data-inline="false" aria-hidden="true"></i></button>
+    </form>
 
     <section class="actions">
       <div class="dark-mode" role="switch" aria-checked="false">
@@ -37,21 +43,22 @@
     </section>
   </header>
 
-  <main role="main">
+  <main class="main">
     <section class="container">
+      @foreach ($alunos as $aluno)
       <article class="card">
-        <img class="card-img-top" src="./public/assets/pinguin maloka.png" alt="Imagem de capa do card" />
-        <div class="infos">
-          <h3 class="name">Felicio</h3>
+        <img class="card-img-top" src="{{ url($aluno->imagem) }}" alt="Imagem de capa do card" />
+        <div class="card-infos">
+          <h3 class="card-name">{{ $aluno->nome }}</h3>
           <p class="card-description">
-            Um exemplo de descrição rápida para construir o título do card e
-            fazer preencher o conteúdo do card.
+            {{ $aluno->descricao }}
           </p>
-          <p class="occupation">Formado</p>
-          <p class="graduation">Ciencia da computação</p>
+          <p class="card-occupation">{{ $aluno->formado ? 'Formado' : 'Não Formado' }}
+          <p class="card-graduation">{{ $aluno->curso->curso }}</p>
           <button class="botao" id="botao" onclick="mudarTexto()">Contratar</button>
         </div>
       </article>
+      @endforeach
     </section>
   </main>
 

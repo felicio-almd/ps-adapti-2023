@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCursoRequest;
 use App\Http\Requests\CursoUpdateRequest;
-
+use App\Http\Requests\StoreAlunoRequest;
+use App\Models\Aluno;
 use App\Models\Curso;
 
 class CursoController extends Controller
@@ -93,7 +94,11 @@ class CursoController extends Controller
         return redirect()->route('curso.index')->with('success', 'Curso atualizado com sucesso');
     }
 
-
+    public function show($id)
+    {
+        $curso = $this->cursos->find($id);
+        return response()->json($curso);
+    }
 
     /**
      * Remove the specified resource from storage.

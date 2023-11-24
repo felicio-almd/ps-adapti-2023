@@ -27,6 +27,7 @@ class AlunoUpdateRequest extends FormRequest
     return [
       "nome" => ["required", "string"],
       "descricao" => ["max:3000"],
+      "formado" => ["boolean"],
       "imagem" => ["image"],
       "cursos_id" => ["required"],
     ];

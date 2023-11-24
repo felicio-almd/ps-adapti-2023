@@ -17,7 +17,7 @@
 <div class="row">
     <label class="col-sm-2 col-form-label">{{ __('Descricao do Aluno') }}</label>
     <div>
-        <textarea id="descricao" name="descricao" class="form-control @error('descricao') is-invalid @enderror" placeholder="Escreva uma descrição curta sobre o aluno">{{ isset($aluno) ? $aluno->descricao : old('descricao') }}</textarea>
+        <textarea id="descricao" name="descricao" class="form-control @error('descricao') is-invalid @enderror" placeholder="Escreva uma descrição curta sobre o aluno" required>{{ isset($aluno) ? $aluno->descricao : old('descricao') }}</textarea>
         @error('descricao')
         <span class="invalid-feedback" role="alert">
             <i class="fi-circle-cross"></i><strong> {{ $message }}</strong>
@@ -42,6 +42,21 @@
         @enderror
     </div>
 </div>
+
+<!-- {{-- Está contratado? --}} -->
+
+<!-- <div class="row">
+    <label class="col-sm-2 col-form-label">{{ __('Está contratado?') }}</label>
+    <div>
+        <input type="checkbox" id="estáFormado" name="contratado" value="1" data-expected-info="contratado"
+            class="form-control @error('contratado') is-invalid @enderror" required>
+        @error('contratado')
+            <span class="invalid-feedback" role="alert">
+                <i class="fi-circle-cross"></i><strong> {{ $message }}</strong>
+            </span>
+        @enderror
+    </div>
+</div> -->
 
 {{-- Curso --}}
 <div class="row">

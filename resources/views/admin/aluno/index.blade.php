@@ -12,7 +12,7 @@
                                 <i class="material-icons">add_circle_outline</i>{{ __('Add Aluno') }}
                             </button>
                         </a>
-                        <h4 class="card-title ">{{ __('Aluno') }}</h4>
+                        <h4 class="card-title ">{{ __('Alunos') }}</h4>
                         <p class="card-category">{{ __('Lista de todos os alunos') }}</p>
                     </div>
                     <div class="card-body">
