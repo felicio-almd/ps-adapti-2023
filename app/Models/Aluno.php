@@ -15,6 +15,7 @@ class Aluno extends Model
         "nome",
         "descricao",
         "formado",
+        "contratado",
         "imagem",
         "cursos_id",
     ];

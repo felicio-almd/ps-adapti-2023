@@ -21,11 +21,11 @@
       <img class="logo-img" src="./public/assets/seek_job.png" alt="Logo da Seek Job" width="75" />
     </div>
 
-    <form class="search-bar" action="" method="post">
+    <form class="search-bar" action="{{ url('/') }}" method="get">
       @csrf
-
-      <input class="search-input" id="search" type="text" name="search" placeholder="Filtrar por nome e curso">
-
+      <!-- <div class="search-bar"> -->
+      <input class="search-input" id="js-search" type="text" name="search" placeholder="Filtrar por nome e curso">
+      <!-- </div> -->
       <button class="search-button" type="submit"><i class="search iconify" data-icon="material-symbols:search" data-inline="false" aria-hidden="true"></i></button>
     </form>
 
@@ -53,16 +53,17 @@
           <p class="card-description">
             {{ $aluno->descricao }}
           </p>
-          <p class="card-occupation">{{ $aluno->formado ? 'Formado' : 'Não Formado' }}
           <p class="card-graduation">{{ $aluno->curso->curso }}</p>
-          <button class="botao" id="botao" onclick="mudarTexto()">Contratar</button>
+          <p class="card-occupation">{{ $aluno->formado ? 'Formado' : 'Não Formado' }}</p>
+          <!-- <p class="card-occupation">{{ $aluno->contratado ? 'Contratado' : 'Não Contratado' }}</p> -->
+          <button class="botao {{ $aluno->contratado ? 'contratado' : '' }}" id="botao" onclick="mudarTexto()">{{ $aluno->contratado ? 'Contratado!' : 'Contratar' }}</button>
         </div>
       </article>
       @endforeach
     </section>
   </main>
 
-  <footer class="footer" role="contentinfo">
+  <footer class=" footer" role="contentinfo">
     <div class="footer__copy">
       <p>Made with ❤ by @felicio.almd</p>
       <p>Seek Job © All Rights Reserved</p>

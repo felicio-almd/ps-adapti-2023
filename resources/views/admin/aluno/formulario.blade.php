@@ -26,7 +26,7 @@
     </div>
 </div>
 
-{{-- Está contratado? ou Esta formado? --}}
+{{-- Esta formado? --}}
 
 <div class="row">
     <label for="formado" class="col-sm-2 col-form-label">{{ __('Está formado?') }}</label>
@@ -43,20 +43,27 @@
     </div>
 </div>
 
-<!-- {{-- Está contratado? --}} -->
+{{-- Está contratado? --}}
 
-<!-- <div class="row">
+<div class="row">
     <label class="col-sm-2 col-form-label">{{ __('Está contratado?') }}</label>
     <div>
-        <input type="checkbox" id="estáFormado" name="contratado" value="1" data-expected-info="contratado"
-            class="form-control @error('contratado') is-invalid @enderror" required>
+        <!-- <input type="checkbox" id="estáContratado" name="contratado" value="1" data-expected-info="contratado" class="form-control @error('contratado') is-invalid @enderror" required> -->
+        <input type="radio" id="contratado-yes" name="contratado" value="1" data-expected-info="contratado" {{ isset($aluno) && $aluno->contratado == 1 ? 'checked' : '' }} class="form-control @error('contratado') is-invalid @enderror">
+
+        <label for="contratado-yes">Sim</label>
+
+        <input type="radio" id="contratado-no" name="contratado" value="0" data-expected-info="contratado" {{ isset($aluno) && $aluno->contratado == 0 ? 'checked' : '' }} class="form-control @error('contratado') is-invalid @enderror">
+
+        <label for="contratado-no">Nao</label>
+
         @error('contratado')
-            <span class="invalid-feedback" role="alert">
-                <i class="fi-circle-cross"></i><strong> {{ $message }}</strong>
-            </span>
+        <span class="invalid-feedback" role="alert">
+            <i class="fi-circle-cross"></i><strong> {{ $message }}</strong>
+        </span>
         @enderror
     </div>
-</div> -->
+</div>
 
 {{-- Curso --}}
 <div class="row">

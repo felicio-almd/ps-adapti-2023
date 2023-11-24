@@ -193,7 +193,7 @@ input[type="checkbox"] {
     color: white;
     transform: scale(1.05);
 }
-.botao.contratado {
+.contratado {
     background-color: var(--background-dark);
     color: var(--text-dark);
 }

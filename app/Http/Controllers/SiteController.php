@@ -49,16 +49,16 @@ class SiteController extends Controller
     {
     }
 
-    public function search(StoreAlunoRequest $request)
-    {
-        // Função que filtra os alunos por nome;
-        $filters = $request->except('_token');
-        $alunos = $this->alunos->where('nome', "%{$request->search}%")
-            // Aluno::where('nome', "%{$request->search}%")
+    // public function search(StoreAlunoRequest $request)
+    // {
+    //     // Função que filtra os alunos por nome;
+    //     $filters = $request->all();
+    //     $alunos = $this->alunos->where('nome', "curso")
+    //         // Aluno::where('nome', "%{$request->search}%")
 
-            ->latest()
-            ->paginate();
+    //         ->latest()
+    //         ->paginate();
 
-        return view('site.index', compact('alunos', 'filters'));
-    }
+    //     return view('site.index', compact('alunos', 'filters'));
+    // }
 }

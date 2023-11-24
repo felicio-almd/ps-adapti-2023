@@ -53,4 +53,5 @@ Route::middleware('locale')->group(function () {
     });
 
     Route::get('/', [SiteController::class, 'index'])->name('site');
+    // Route::any('/search', [SiteController::class, 'search'])->name('search');
 });

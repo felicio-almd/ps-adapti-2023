@@ -30,37 +30,50 @@ changeThemeBtn.addEventListener("change", function () {
 });
 
 // mudar botao e salvar no localStorage
-function mudarTexto() {
-    var botao = document.getElementById("botao");
+// function mudarTexto() {
+//     var botao = document.getElementById("botao");
 
-    if (botao.innerHTML === "Contratar") {
-        // Se o texto atual for "Contratar", muda para "Contratado!"
-        botao.innerHTML = "Contratado!";
-        botao.classList.add("contratado");
-    } else {
-        botao.innerHTML = "Contratar";
-        botao.classList.remove("contratado");
-    }
+//     if (botao.innerHTML === "Contratar") {
+//         // Se o texto atual for "Contratar", muda para "Contratado!"
+//         botao.innerHTML = "Contratado!";
+//         botao.classList.add("contratado");
+//     } else {
+//         botao.innerHTML = "Contratar";
+//         botao.classList.remove("contratado");
+//     }
 
-    // salvando no localStorage
-    localStorage.setItem("textoBotao", botao.innerHTML);
-}
+//     // salvando no localStorage
+//     localStorage.setItem("textoBotao", botao.innerHTML);
+// }
 
-// carregar o texto do botão do localStorage ao carregar a página
-function carregarTexto() {
-    var botao = document.getElementById("botao");
+// // carregar o texto do botão do localStorage ao carregar a página
+// function carregarTexto() {
+//     var botao = document.getElementById("botao");
 
-    // pega o texto do botão do localStorage
-    var textoSalvo = localStorage.getItem("textoBotao");
+//     // pega o texto do botão do localStorage
+//     var textoSalvo = localStorage.getItem("textoBotao");
 
-    // se houver um texto salvo, define o texto do botão com esse valor
-    if (textoSalvo) {
-        botao.innerHTML = textoSalvo;
-        if (textoSalvo === "Contratado!") {
-            botao.classList.add("contratado");
-        }
-    }
-}
+//     // se houver um texto salvo, define o texto do botão com esse valor
+//     if (textoSalvo) {
+//         botao.innerHTML = textoSalvo;
+//         if (textoSalvo === "Contratado!") {
+//             botao.classList.add("contratado");
+//         }
+//     }
+// }
 
-// chama a função carregarTexto ao carregar a página
-window.onload = carregarTexto;
+// // chama a função carregarTexto ao carregar a página
+// window.onload = carregarTexto;
+
+// const searchInput = document.getElementById("js-search");
+
+// searchInput.addEventListener("input", (e) => {
+//     console.log(e.target.value);
+// });
+
+// async function getAlunos() {
+//     const itens = await fetch("/");
+//     console.log(itens);
+// }
+
+// getAlunos();
