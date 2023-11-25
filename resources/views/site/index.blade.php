@@ -17,9 +17,9 @@
 
 <body>
   <header class="header">
-    <div class="logo" role="banner">
+    <a class="logo" role="banner" href="/">
       <img class="logo-img" src="{{ asset('site/img/logo1.png') }}" alt="Logo da Seek Job" width="100" />
-    </div>
+    </a>
 
     <form class="search-bar" action="{{ url('/search') }}" method="GET">
       <!-- @csrf -->

@@ -21,7 +21,6 @@ use App\Http\Controllers\AlunoController;
 |
 */
 
-Route::get('produtosFiltrados', [SiteController::class, 'produtofiltrado'])->name('produtofiltro');
 Route::get('search', [SiteController::class, 'search'])->name('search');
 
 Route::middleware('locale')->group(function () {
