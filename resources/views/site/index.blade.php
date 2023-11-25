@@ -7,7 +7,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link rel="shortcut icon" href="{{ asset('site/img/logo1.png') }}">
   <link rel="stylesheet" href="{{ asset('site/css/styles.css') }}">
 
   <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
@@ -18,11 +18,11 @@
 <body>
   <header class="header">
     <div class="logo" role="banner">
-      <img class="logo-img" src="./public/assets/seek_job.png" alt="Logo da Seek Job" width="75" />
+      <img class="logo-img" src="{{ asset('site/img/logo1.png') }}" alt="Logo da Seek Job" width="100" />
     </div>
 
-    <form class="search-bar" action="{{ url('/') }}" method="get">
-      @csrf
+    <form class="search-bar" action="{{ url('/search') }}" method="GET">
+      <!-- @csrf -->
       <!-- <div class="search-bar"> -->
       <input class="search-input" id="js-search" type="text" name="search" placeholder="Filtrar por nome e curso">
       <!-- </div> -->
@@ -47,7 +47,7 @@
     <section class="container">
       @foreach ($alunos as $aluno)
       <article class="card">
-        <img class="card-img-top" src="{{ url($aluno->imagem) }}" alt="Imagem de capa do card" />
+        <img class="card-img-top" src="{{ url($aluno->imagem) }}" alt="Imagem de Perfil" />
         <div class="card-infos">
           <h3 class="card-name">{{ $aluno->nome }}</h3>
           <p class="card-description">

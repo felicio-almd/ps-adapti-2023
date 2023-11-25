@@ -21,6 +21,9 @@ use App\Http\Controllers\AlunoController;
 |
 */
 
+Route::get('produtosFiltrados', [SiteController::class, 'produtofiltrado'])->name('produtofiltro');
+Route::get('search', [SiteController::class, 'search'])->name('search');
+
 Route::middleware('locale')->group(function () {
 
     Route::put('/locale', [LocaleController::class, 'setLocale'])->name('locale');
@@ -53,5 +56,4 @@ Route::middleware('locale')->group(function () {
     });
 
     Route::get('/', [SiteController::class, 'index'])->name('site');
-    // Route::any('/search', [SiteController::class, 'search'])->name('search');
 });

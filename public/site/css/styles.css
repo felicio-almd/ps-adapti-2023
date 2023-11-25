@@ -119,10 +119,10 @@ input[type="checkbox"] {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    max-width: calc(18rem * 3 + 64px);
-    padding: 1rem;
+    justify-content: flex-start;
+    gap: 3rem;
+    max-width: calc(20rem * 3 + 64px);
+    padding: 4rem 1rem;
 }
 
 .card {
@@ -149,14 +149,16 @@ input[type="checkbox"] {
     justify-content: center;
     gap: 8px;
     flex-grow: 1;
+    overflow: hidden;
 }
 
 .card-description {
     font-size: 14px;
+    overflow: auto;
 }
 
-.card-occupation {
-    font-size: 14px;
+.card-description::-webkit-scrollbar {
+    width: 0px;
 }
 
 .card-graduation {
