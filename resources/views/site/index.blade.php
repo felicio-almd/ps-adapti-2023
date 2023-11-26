@@ -17,19 +17,12 @@
 </head>
 
 <body>
-  <!-- <script src="{{ asset('site/js/scripts.js') }}"></script> -->
+
   <header class="header">
     <a class="logo" role="banner" href="/">
       <img class="logo-img" src="{{ asset('site/img/logo1.png') }}" alt="Logo da Seek Job" width="100" />
     </a>
 
-    <!-- <form class="search-bar" action="{{ url('/search') }}" method="GET" id="searchForm">
-       @csrf 
-     <div class="search-bar"> 
-    <input class="search-input" id="js-search" type="text" name="search" placeholder="Filtrar por nome e curso">
-    </div> 
-    <button class="search-button" type="submit" onclick="search()"><i class="search iconify" data-icon="material-symbols:search" data-inline="false" aria-hidden="true"></i></button>
-    </form> -->
     <form class="search-bar" action="{{ url('/search') }}" method="GET" id="searchForm">
       <input class="search-input" id="js-search" type="text" name="search" placeholder="Filtrar por nome e curso">
       <button class="search-button" type="button" onclick="search()"><i class="search iconify" data-icon="material-symbols:search" data-inline="false" aria-hidden="true"></i></button>
@@ -62,11 +55,16 @@
           <p class="card-graduation">{{ $aluno->curso->curso }}</p>
           <p class="card-occupation">{{ $aluno->formado ? 'Formado' : 'Não Formado' }}</p>
           <!-- <p class="card-occupation">{{ $aluno->contratado ? 'Contratado' : 'Não Contratado' }}</p> -->
-          <button class="botao {{ $aluno->contratado ? 'contratado' : '' }}" id="botao" onclick="mudarTexto()">{{ $aluno->contratado ? 'Contratado!' : 'Contratar' }}</button>
+
         </div>
+        <button class="botao {{ $aluno->contratado ? 'contratado' : '' }}" id="botao">{{ $aluno->contratado ? 'Contratado!' : 'Contratar' }}</button>
       </article>
       @endforeach
+
     </section>
+    <div class="pagination">
+      {{ $alunos->links() }}
+    </div>
   </main>
 
   <footer class=" footer" role="contentinfo">

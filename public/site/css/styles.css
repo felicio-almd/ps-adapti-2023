@@ -105,12 +105,18 @@ input[type="checkbox"] {
 
 .login {
     color: var(--text);
+    transition: transform 200ms ease-in-out;
+}
+.login:hover {
+    transform: scale(1.1);
 }
 .main {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    padding: 0 0 1rem 0;
 }
 
 .container {
@@ -128,7 +134,7 @@ input[type="checkbox"] {
 .card {
     box-shadow: 5px 5px 15px -1px rgba(0, 0, 0, 0.41);
     max-width: 100%;
-    height: 27rem;
+    height: 28rem;
     width: 18rem;
     background: var(--secondary);
     border-radius: 1rem;
@@ -138,6 +144,7 @@ input[type="checkbox"] {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+    padding-bottom: 1rem;
 }
 
 .card-infos {
@@ -181,11 +188,12 @@ input[type="checkbox"] {
 .botao {
     font-family: Poppins, sans-serif;
     border: solid 1px var(--text);
-    height: 2rem;
+    height: 36px;
     border-radius: 8px;
     color: var(--text);
     background: var(--accent);
-    width: 100%;
+    align-self: center;
+    width: 80%;
     cursor: pointer;
     transition: transform 200ms ease-in-out;
 }
@@ -198,6 +206,20 @@ input[type="checkbox"] {
 .contratado {
     background-color: var(--background-dark);
     color: var(--text-dark);
+}
+
+.pagination {
+    text-decoration: none;
+}
+
+.pagination nav svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.pagination svg {
+    width: 0px;
 }
 
 .footer {
@@ -240,6 +262,9 @@ input[type="checkbox"] {
 }
 
 @media (max-width: 625px) {
+    .container {
+        justify-content: center;
+    }
     .header {
         display: flex;
         flex-direction: column;
@@ -255,5 +280,11 @@ input[type="checkbox"] {
     .container {
         height: calc(100% - var(--header-mobile-height));
         margin-top: var(--header-mobile-height);
+    }
+}
+
+@media (max-width: 980px) {
+    .container {
+        justify-content: center;
     }
 }

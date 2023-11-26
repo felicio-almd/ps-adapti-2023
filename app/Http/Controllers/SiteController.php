@@ -22,7 +22,7 @@ class SiteController extends Controller
     public function index()
     {
 
-        $alunos = $this->alunos->all();
+        $alunos = $this->alunos->paginate(12);
 
         return view('site.index', compact('alunos'));
     }
@@ -66,7 +66,7 @@ class SiteController extends Controller
             ->orWhereHas('curso', function ($query) use ($search_text) {
                 $query->where('curso', 'like', "%$search_text%");
             })
-            ->get();
+            ->paginate(12);
 
 
         return view('site.index', compact('alunos'));
