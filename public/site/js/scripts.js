@@ -77,3 +77,44 @@ changeThemeBtn.addEventListener("change", function () {
 // }
 
 // getAlunos();
+
+// function search(event) {
+//     event.preventDefault();
+//     var searchInput = $("#js-search").val();
+//     var searchRoute = $("#searchForm").data("searchRoute");
+
+//     $.get(searchRoute, { search: searchInput }, function (data) {
+//         // Atualize a parte da página que exibe os resultados
+//         $(".container").html(""); // Limpe os resultados antigos
+
+//         // Adicione os novos resultados
+//         $.each(data.alunos, function (index, aluno) {
+//             console.log("Dados recebidos:", data);
+//             var cardHtml = '<article class="card">';
+//             cardHtml +=
+//                 '<img class="card-img-top" src="' +
+//                 aluno.imagem +
+//                 '" alt="Imagem de Perfil" />';
+//             cardHtml += '<div class="card-infos">';
+//             cardHtml += '<h3 class="card-name">' + aluno.nome + "</h3>";
+//             cardHtml +=
+//                 '<p class="card-description">' + aluno.descricao + "</p>";
+//             cardHtml +=
+//                 '<p class="card-graduation">' + aluno.curso.curso + "</p>";
+//             cardHtml +=
+//                 '<p class="card-occupation">' +
+//                 (aluno.formado ? "Formado" : "Não Formado") +
+//                 "</p>";
+//             cardHtml +=
+//                 '<button class="botao ' +
+//                 (aluno.contratado ? "contratado" : "") +
+//                 '" id="botao" onclick="mudarTexto()">' +
+//                 (aluno.contratado ? "Contratado!" : "Contratar") +
+//                 "</button>";
+//             cardHtml += "</div>";
+//             cardHtml += "</article>";
+
+//             $(".container").append(cardHtml);
+//         });
+//     });
+// }

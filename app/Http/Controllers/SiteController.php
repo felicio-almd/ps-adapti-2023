@@ -57,7 +57,7 @@ class SiteController extends Controller
 
     public function search(SiteRequest $request)
     {
-        // Função que filtra os alunos por nome e por graduação;
+        // Função que filtra os alunos por nome e por curso;
 
         $search_text = $request['search'];
 

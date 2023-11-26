@@ -2,10 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\Aluno;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ProdutoSeeder extends Seeder
+class AlunoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +15,6 @@ class ProdutoSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Aluno::factory()->count(12)->create();
     }
 }

@@ -4,8 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Curso;
 
-class CategoriaSeeder extends Seeder
+class CursoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +15,7 @@ class CategoriaSeeder extends Seeder
      */
     public function run()
     {
-        //
+        // instanciando o objeto
+        Curso::factory()->count(5)->create();
     }
 }

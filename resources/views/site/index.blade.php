@@ -10,23 +10,29 @@
   <link rel="shortcut icon" href="{{ asset('site/img/logo1.png') }}">
   <link rel="stylesheet" href="{{ asset('site/css/styles.css') }}">
 
+
   <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
 
   <title>Seek Job</title>
 </head>
 
 <body>
+  <!-- <script src="{{ asset('site/js/scripts.js') }}"></script> -->
   <header class="header">
     <a class="logo" role="banner" href="/">
       <img class="logo-img" src="{{ asset('site/img/logo1.png') }}" alt="Logo da Seek Job" width="100" />
     </a>
 
-    <form class="search-bar" action="{{ url('/search') }}" method="GET">
-      <!-- @csrf -->
-      <!-- <div class="search-bar"> -->
+    <!-- <form class="search-bar" action="{{ url('/search') }}" method="GET" id="searchForm">
+       @csrf 
+     <div class="search-bar"> 
+    <input class="search-input" id="js-search" type="text" name="search" placeholder="Filtrar por nome e curso">
+    </div> 
+    <button class="search-button" type="submit" onclick="search()"><i class="search iconify" data-icon="material-symbols:search" data-inline="false" aria-hidden="true"></i></button>
+    </form> -->
+    <form class="search-bar" action="{{ url('/search') }}" method="GET" id="searchForm">
       <input class="search-input" id="js-search" type="text" name="search" placeholder="Filtrar por nome e curso">
-      <!-- </div> -->
-      <button class="search-button" type="submit"><i class="search iconify" data-icon="material-symbols:search" data-inline="false" aria-hidden="true"></i></button>
+      <button class="search-button" type="button" onclick="search()"><i class="search iconify" data-icon="material-symbols:search" data-inline="false" aria-hidden="true"></i></button>
     </form>
 
     <section class="actions">
@@ -69,6 +75,7 @@
       <p>Seek Job © All Rights Reserved</p>
     </div>
   </footer>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="{{ asset('site/js/scripts.js') }}"></script>
 </body>
 
