@@ -65,56 +65,33 @@ changeThemeBtn.addEventListener("change", function () {
 // // chama a função carregarTexto ao carregar a página
 // window.onload = carregarTexto;
 
-// const searchInput = document.getElementById("js-search");
-
-// searchInput.addEventListener("input", (e) => {
-//     console.log(e.target.value);
+// $(document).ready(function () {
+//     $("html,body").animate({ scrollTop: document.body.scrollHeight }, "slow");
 // });
 
-// async function getAlunos() {
-//     const itens = await fetch("/");
-//     console.log(itens);
-// }
+let mybutton = document.getElementById("scroll-button");
 
-// getAlunos();
+// mostra o botao ao usuario scrollar qualquer quantia
 
-// function search(event) {
-//     event.preventDefault();
-//     var searchInput = $("#js-search").val();
-//     var searchRoute = $("#searchForm").data("searchRoute");
+window.onscroll = function () {
+    scrollFunction();
+};
 
-//     $.get(searchRoute, { search: searchInput }, function (data) {
-//         // Atualize a parte da página que exibe os resultados
-//         $(".container").html(""); // Limpe os resultados antigos
+function scrollFunction() {
+    if (
+        document.body.scrollTop > 30 ||
+        document.documentElement.scrollTop > 30
+    ) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
 
-//         // Adicione os novos resultados
-//         $.each(data.alunos, function (index, aluno) {
-//             console.log("Dados recebidos:", data);
-//             var cardHtml = '<article class="card">';
-//             cardHtml +=
-//                 '<img class="card-img-top" src="' +
-//                 aluno.imagem +
-//                 '" alt="Imagem de Perfil" />';
-//             cardHtml += '<div class="card-infos">';
-//             cardHtml += '<h3 class="card-name">' + aluno.nome + "</h3>";
-//             cardHtml +=
-//                 '<p class="card-description">' + aluno.descricao + "</p>";
-//             cardHtml +=
-//                 '<p class="card-graduation">' + aluno.curso.curso + "</p>";
-//             cardHtml +=
-//                 '<p class="card-occupation">' +
-//                 (aluno.formado ? "Formado" : "Não Formado") +
-//                 "</p>";
-//             cardHtml +=
-//                 '<button class="botao ' +
-//                 (aluno.contratado ? "contratado" : "") +
-//                 '" id="botao" onclick="mudarTexto()">' +
-//                 (aluno.contratado ? "Contratado!" : "Contratar") +
-//                 "</button>";
-//             cardHtml += "</div>";
-//             cardHtml += "</article>";
-
-//             $(".container").append(cardHtml);
-//         });
-//     });
-// }
+// Quando o usuario clicar volta ao topo da pagina
+function toTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+}

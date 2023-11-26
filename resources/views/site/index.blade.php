@@ -25,7 +25,7 @@
 
     <form class="search-bar" action="{{ url('/search') }}" method="GET" id="searchForm">
       <input class="search-input" id="js-search" type="text" name="search" placeholder="Filtrar por nome e curso">
-      <button class="search-button" type="button" onclick="search()"><i class="search iconify" data-icon="material-symbols:search" data-inline="false" aria-hidden="true"></i></button>
+      <button class="search-button" type="submit"><i class="search iconify" data-icon="material-symbols:search" data-inline="false" aria-hidden="true"></i></button>
     </form>
 
     <section class="actions">
@@ -46,7 +46,7 @@
     <section class="container">
       @foreach ($alunos as $aluno)
       <article class="card">
-        <img class="card-img-top" src="{{ url($aluno->imagem) }}" alt="Imagem de Perfil" />
+        <img class="card-img-top" src="{{ url($aluno->imagem) }}" alt="{{ $aluno->nome }}" />
         <div class="card-infos">
           <h3 class="card-name">{{ $aluno->nome }}</h3>
           <p class="card-description">
@@ -62,6 +62,7 @@
       @endforeach
 
     </section>
+    <button onclick="toTop()" id="scroll-button" title="Go to top"><i class="iconify" data-icon="material-symbols:arrow-upward-alt-rounded" data-inline="false" aria-hidden="true"></i></button>
     <div class="pagination">
       {{ $alunos->links() }}
     </div>
