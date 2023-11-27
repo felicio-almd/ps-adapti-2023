@@ -46,7 +46,7 @@
     <section class="container">
       @foreach ($alunos as $aluno)
       <article class="card">
-        <img class="card-img-top" src="{{ url($aluno->imagem) }}" alt="{{ $aluno->nome }}" />
+        <img class="card-img-top" src="{{ url($aluno->imagem) }}" alt="Imagem de {{ $aluno->nome }}" />
         <div class="card-infos">
           <h3 class="card-name">{{ $aluno->nome }}</h3>
           <p class="card-description">
@@ -55,9 +55,8 @@
           <p class="card-graduation">{{ $aluno->curso->curso }}</p>
           <p class="card-occupation">{{ $aluno->formado ? 'Formado' : 'Não Formado' }}</p>
           <!-- <p class="card-occupation">{{ $aluno->contratado ? 'Contratado' : 'Não Contratado' }}</p> -->
-
         </div>
-        <button class="botao {{ $aluno->contratado ? 'contratado' : '' }}" id="botao">{{ $aluno->contratado ? 'Contratado!' : 'Contratar' }}</button>
+        <button class="botao {{ $aluno->contratado ? 'contratado' : '' }}" id="botao-{{ $aluno->id }}" value="{{ $aluno->id }}" onclick="saveItem(value, 'botao-{{ $aluno->id }}')">{{ $aluno->contratado ? 'Contratado!' : 'Contratar' }}</button>
       </article>
       @endforeach
 

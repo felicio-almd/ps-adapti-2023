@@ -31,10 +31,12 @@
 <div class="row">
     <label for="formado" class="col-sm-2 col-form-label">{{ __('Está formado?') }}</label>
     <div>
-        <input type="radio" id="formado-yes" name="formado" value="1" data-expected-info="formado" {{ isset($aluno) && $aluno->formado == 1 ? 'checked' : '' }} class="form-control @error('formado') is-invalid @enderror">
-        <label for="formado-yes">Sim</label>
-        <input type="radio" id="formado-no" name="formado" value="0" data-expected-info="formado" {{ isset($aluno) && $aluno->formado == 0 ? 'checked' : '' }} class="form-control @error('formado') is-invalid @enderror">
-        <label for="formado-no">Nao</label>
+        <div class="caixa-radio">
+            <input type="radio" id="formado-yes" name="formado" value="1" data-expected-info="formado" {{ isset($aluno) && $aluno->formado == 1 ? 'checked' : '' }} class="form-control @error('formado') is-invalid @enderror">
+            <label for="formado-yes">Sim</label>
+            <input type="radio" id="formado-no" name="formado" value="0" data-expected-info="formado" {{ isset($aluno) && $aluno->formado == 0 ? 'checked' : '' }} class="form-control @error('formado') is-invalid @enderror">
+            <label for="formado-no">Nao</label>
+        </div>
         @error('formado')
         <span class="invalid-feedback" role="alert">
             <i class="fi-circle-cross"></i><strong> {{ $message }}</strong>
@@ -49,13 +51,13 @@
     <label class="col-sm-2 col-form-label">{{ __('Está contratado?') }}</label>
     <div>
         <!-- <input type="checkbox" id="estáContratado" name="contratado" value="1" data-expected-info="contratado" class="form-control @error('contratado') is-invalid @enderror" required> -->
-        <input type="radio" id="contratado-yes" name="contratado" value="1" data-expected-info="contratado" {{ isset($aluno) && $aluno->contratado == 1 ? 'checked' : '' }} class="form-control @error('contratado') is-invalid @enderror">
+        <div class="caixa-radio">
+            <input type="radio" id="contratado-yes" name="contratado" value="1" data-expected-info="contratado" {{ isset($aluno) && $aluno->contratado == 1 ? 'checked' : '' }} class="form-control @error('contratado') is-invalid @enderror">
+            <label for="contratado-yes">Sim</label>
+            <input type="radio" id="contratado-no" name="contratado" value="0" data-expected-info="contratado" {{ isset($aluno) && $aluno->contratado == 0 ? 'checked' : '' }} class="form-control @error('contratado') is-invalid @enderror">
+            <label for="contratado-no">Nao</label>
+        </div>
 
-        <label for="contratado-yes">Sim</label>
-
-        <input type="radio" id="contratado-no" name="contratado" value="0" data-expected-info="contratado" {{ isset($aluno) && $aluno->contratado == 0 ? 'checked' : '' }} class="form-control @error('contratado') is-invalid @enderror">
-
-        <label for="contratado-no">Nao</label>
 
         @error('contratado')
         <span class="invalid-feedback" role="alert">
@@ -68,7 +70,7 @@
 {{-- Curso --}}
 <div class="row">
     <label class="col-sm-2 col-form-label">{{ __('Curso') }}</label>
-    <div>
+    <div class="">
         <select id="cursos_id" name="cursos_id" class="form-control @error('cursos_id') is-invalid @enderror" required>
             <option value="">--- Selecione um Curso ---</option>
             @isset($cursos)

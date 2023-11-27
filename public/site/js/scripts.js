@@ -95,3 +95,58 @@ function toTop() {
         behavior: "smooth",
     });
 }
+
+//
+// Funcao troca botao contratar/contratado
+//
+function verifyKey(value) {
+    // verifica se o valor existe dentro da chave e se ela existe
+    const keys = localStorage.getItem("contratados");
+    if (keys && keys.includes(value)) {
+        return true;
+    }
+    return false;
+}
+
+function setupButtons() {
+    // Configura o estado inicial dos botoes ao recarregar a pagina com base nos dados salvos no localStorage
+    const buttons = document.querySelectorAll(".botao");
+    buttons.forEach((button) => {
+        const value = button.value;
+        const isContratado = verifyKey(value);
+
+        if (isContratado) {
+            button.textContent = "Contratado!";
+            button.classList.add("contratado");
+        } else {
+            button.textContent = "Contratar";
+            button.classList.remove("contratado");
+        }
+    });
+}
+
+function saveItem(value, buttonId) {
+    // Salva o valor de cada id dos botões na chave e faz a troca de texto em tempo real
+    const existKey = verifyKey(value);
+    let dataArray = JSON.parse(localStorage.getItem("contratados")) || [];
+    if (existKey) {
+        let index = dataArray.indexOf(value);
+        dataArray.splice(index, 1);
+    } else {
+        dataArray.push(value);
+    }
+    localStorage.setItem("contratados", JSON.stringify(dataArray));
+
+    const cardButton = document.getElementById(buttonId);
+
+    if (existKey) {
+        cardButton.textContent = "Contratar";
+        cardButton.classList.remove("contratado");
+    } else {
+        cardButton.textContent = "Contratado!";
+        cardButton.classList.add("contratado");
+    }
+}
+
+// chamada da função de verificar estado inicial dos botões toda vez que a pagina é carregada
+window.addEventListener("load", setupButtons);

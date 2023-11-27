@@ -231,7 +231,6 @@ th {
 
 label {
     display: inline-block;
-    margin-bottom: 0.5rem;
 }
 
 button {
@@ -687,6 +686,7 @@ input[type="radio"],
 input[type="checkbox"] {
     box-sizing: border-box;
     padding: 0;
+    width: 16px;
 }
 
 input[type="date"],
@@ -18228,7 +18228,9 @@ label {
 }
 
 .card
-    [class*="card-header-"]:not(.card-header-icon):not(.card-header-text):not(.card-header-image) {
+    [class*="card-header-"]:not(.card-header-icon):not(.card-header-text):not(
+        .card-header-image
+    ) {
     border-radius: 3px;
     margin-top: -20px;
     padding: 15px;
@@ -18999,10 +19001,14 @@ Copyright (c) 2015 Daniel Eden
     .navbar .navbar-collapse .navbar-nav > li.button-container {
         padding: 15px;
     }
-    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(
+            .input-group-btn
+        ) {
         width: -webkit-fill-available !important;
     }
-    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn)
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(
+            .input-group-btn
+        )
         .dropdown-menu.show {
         min-width: auto;
         left: auto;
@@ -20055,3 +20061,14 @@ div.card-header.card-header-primary
     text-align: center;
 }
 /*#sourceMappingURL=dashboard-free.css.map */
+
+.caixa-radio {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.caixa-radio > label {
+    margin: 0;
+}

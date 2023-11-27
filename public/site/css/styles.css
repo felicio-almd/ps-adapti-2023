@@ -148,7 +148,7 @@ input[type="checkbox"] {
 }
 
 .card-infos {
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -209,17 +209,49 @@ input[type="checkbox"] {
 }
 
 .pagination {
-    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.pagination nav svg {
+.pagination > nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination > nav > div:first-child {
+    gap: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.pagination > nav > div:first-child span {
+    color: var(--text);
+    opacity: 0.8;
+}
+
+.pagination > nav > div:first-child a {
+    color: var(--accent);
+    opacity: 0.8;
     text-decoration: none;
 }
-.pagination svg {
-    width: 0px;
+
+.pagination > nav > div:last-child > div:first-child {
+    display: none;
+}
+
+.pagination > nav > div:last-child > div:last-child span {
+    display: flex;
+    gap: 10px;
+}
+
+.pagination > nav > div:last-child > div:last-child span > a {
+    text-decoration: none;
+    color: var(--accent);
 }
 
 .footer {
@@ -265,7 +297,7 @@ input[type="checkbox"] {
     color: var(--text-dark);
 }
 
-#myBtn {
+#scroll-button {
     display: none;
     position: fixed;
     bottom: 15px; /* Place the button at the bottom of the page */
@@ -280,7 +312,7 @@ input[type="checkbox"] {
     height: 30px;
 }
 
-#myBtn:hover {
+#scroll-button:hover {
     background-color: #555; /* Add a dark-grey background on hover */
 }
 
