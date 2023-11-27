@@ -54,9 +54,15 @@
           </p>
           <p class="card-graduation">{{ $aluno->curso->curso }}</p>
           <p class="card-occupation">{{ $aluno->formado ? 'Formado' : 'Não Formado' }}</p>
-          <!-- <p class="card-occupation">{{ $aluno->contratado ? 'Contratado' : 'Não Contratado' }}</p> -->
         </div>
-        <button class="botao {{ $aluno->contratado ? 'contratado' : '' }}" id="botao-{{ $aluno->id }}" value="{{ $aluno->id }}" onclick="saveItem(value, 'botao-{{ $aluno->id }}')">{{ $aluno->contratado ? 'Contratado!' : 'Contratar' }}</button>
+        @if($aluno->contratado)
+        <p class="card-contratado">Contratado!</p>
+        @else
+        <form class="card-form" action="{{ route('aluno.contratar', $aluno) }}" method="post">
+          @csrf
+          <button class="card-button" type="submit">Contratar</button>
+        </form>
+        @endif
       </article>
       @endforeach
 

@@ -93,4 +93,10 @@ class AlunoController extends Controller
 
         return redirect()->route('aluno.index')->with('success', 'Aluno deletado com sucesso');
     }
+
+    public function contratar(Aluno $aluno)
+    {
+        $aluno->update(['contratado' => true]);
+        return redirect()->back()->with('status', 'Aluno contratado com sucesso!');
+    }
 }

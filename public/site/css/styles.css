@@ -185,7 +185,7 @@ input[type="checkbox"] {
     flex-direction: column;
 }
 
-.botao {
+.card-contratado {
     font-family: Poppins, sans-serif;
     border: solid 1px var(--text);
     height: 36px;
@@ -193,19 +193,39 @@ input[type="checkbox"] {
     color: var(--text);
     background: var(--accent);
     align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 80%;
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+.card-form {
+    align-self: center;
+    width: 80%;
+}
+
+.card-button {
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 0.875rem;
+    border: solid 1px var(--text);
+    height: 36px;
+    border-radius: 8px;
+    color: var(--text);
+    background: var(--accent);
+    width: 100%;
     cursor: pointer;
     transition: transform 200ms ease-in-out;
 }
 
-.botao:hover {
-    background-color: var(--background-container);
+.card-button:hover {
+    background-color: var(--secondary-dark);
     color: white;
     transform: scale(1.05);
 }
 .contratado {
-    background-color: var(--background-dark);
-    color: var(--text-dark);
 }
 
 .pagination {
