@@ -20,11 +20,11 @@
 
   <header class="header">
     <a class="logo" role="banner" href="/">
-      <img class="logo-img" src="{{ asset('site/img/logo1.png') }}" alt="Logo da Seek Job" width="100" />
+      <img class="logo-img" src="{{ asset('site/img/logo.png') }}" alt="Logo da Seek Job" width="80" />
     </a>
 
     <form class="search-bar" action="{{ url('/search') }}" method="GET" id="searchForm">
-      <input class="search-input" id="js-search" type="text" name="search" placeholder="Filtrar por nome e curso">
+      <input class="search-input" type="text" name="search" placeholder="Filtrar por nome e curso">
       <button class="search-button" type="submit"><i class="search iconify" data-icon="material-symbols:search" data-inline="false" aria-hidden="true"></i></button>
     </form>
 
@@ -52,13 +52,13 @@
           <p class="card-description">
             {{ $aluno->descricao }}
           </p>
-          <p class="card-graduation">{{ $aluno->curso->curso }}</p>
+          <p class="card-graduation">Curso: {{ $aluno->curso->curso }}</p>
           <p class="card-occupation">{{ $aluno->formado ? 'Formado' : 'Não Formado' }}</p>
         </div>
         @if($aluno->contratado)
         <p class="card-contratado">Contratado!</p>
         @else
-        <form class="card-form" action="{{ route('aluno.contratar', $aluno) }}" method="post">
+        <form class="card-form" action="{{ route('contratar', $aluno) }}" method="post">
           @csrf
           <button class="card-button" type="submit">Contratar</button>
         </form>

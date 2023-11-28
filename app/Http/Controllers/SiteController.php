@@ -68,6 +68,8 @@ class SiteController extends Controller
             })
             ->paginate(12);
 
+        // ->get();
+
         return view('site.index', compact('alunos'));
     }
 }

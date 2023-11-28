@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Curso;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -23,7 +24,7 @@ class AlunoFactory extends Factory
             'formado' => fake()->numberBetween(0, 1),
             'contratado' => fake()->numberBetween(0, 1),
             'imagem' => fake()->imageUrl(640, 480),
-            'cursos_id' => fake()->numberBetween(1, 5)
+            'cursos_id' => (Curso::all()->random(1)->first())->id,
         ];
     }
 }

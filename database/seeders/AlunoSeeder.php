@@ -15,6 +15,6 @@ class AlunoSeeder extends Seeder
      */
     public function run()
     {
-        Aluno::factory()->count(12)->create();
+        Aluno::factory()->count(30)->create();
     }
 }

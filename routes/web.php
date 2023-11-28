@@ -25,7 +25,7 @@ use App\Http\Controllers\AlunoController;
 //Rota para filtro de aluno e curso
 Route::get('search', [SiteController::class, 'search'])->name('search');
 //Rota para contratar aluno
-Route::post('/contratar/{aluno}', [AlunoController::class, 'contratar'])->name('aluno.contratar');
+Route::post('/contratar/{aluno}', [AlunoController::class, 'contratar'])->name('contratar');
 
 
 Route::middleware('locale')->group(function () {
